@@ -10,17 +10,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import edu.kh.library.model.vo.Book;
 
-
-
 public class BookService {
-	
-	
-	
-	
+
 	FileWriter fw = null;
 	BufferedWriter bw = null;
 	
@@ -28,6 +24,9 @@ public class BookService {
 
 	ArrayList<Book> library = new ArrayList<Book>();
 	
+	ArrayList<Map<String, String>> lib = new ArrayList<Map<String, String>>();
+	
+
 	
 
 	public class UserComparator implements Comparator<Book>{
@@ -38,7 +37,6 @@ public class BookService {
 		if(a.getBookNum()<b.getBookNum()) return -1;
 		return 0;
 		
-	
 		}
 	}
 	
@@ -226,7 +224,6 @@ public class BookService {
 				}else {
 					return "삭제를 진행하지 않습니다.";
 				}
-				
 			}
 		}
 		return "삭제 완료";
@@ -296,12 +293,7 @@ public class BookService {
 		}
 	}
 
-
-
-
 	public String deleteFavorite() {
-		
-		
 		
 		boolean exist = false;
 		
@@ -365,6 +357,5 @@ public class BookService {
 			return "삭제 성공";
 		}
 	}
-	
 }
 
